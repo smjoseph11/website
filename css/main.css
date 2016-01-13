@@ -1,0 +1,92 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.navbar-static-top{
+	position: relative;
+	bottom:50px;
+}
+.nav-border{
+
+
+  border-bottom: 1px solid black;
+}
+.nav-border-2{
+
+
+
+border-left:2px solid black;
+height: 57px;
+}
+.name-border{
+height:57px;
+border-left: 4px solid BLACK;
+border-bottom: 4px solid BLACK;
+}
+.name-border-2{
+height:57px;
+border-bottom: 3px solid BLACK
+}
+.cv-border{
+	border-bottom: 1px solid BLACK;
+
+}
+.vdivide [class*='col-']:not(:last-child):after {
+  background: #cccccc;
+  width: 1px;
+  content: "";
+  display:block;
+  position: absolute;
+  top:10%;
+  bottom: 10%;
+  right: 0;
+}
+.col-sm-3.text-center.selected:hover{
+  -webkit-transition: .4s ease-out 0.1s; 
+  -moz-transition: .4s ease-out 0.1s; 
+  -o-transition: .4s ease-out 0.1s;  
+  transition: .4s ease-out 0.1s; 
+	background-color:#ff0000;
+}
+.col-sm-3.text-center.selected:active{ 
+  background-color:#ff0000;
+}
+.nav-highlight{
+	border-bottom:2px solid #e6e6e6;
+}
+.nav-highlight-2{
+	border-left: 3px solid #e6e6e6;
+}
+
+.scores{
+	color:RED;
+	border-style:outset;
+}
+.scores:hover{
+	border-style:inset;
+}
+.divider{
+    position:absolute;
+    left:25%;
+    top:10%;
+    bottom:10%;
+    border-left:1px solid RED;
+}
+#loading{
+  visibility:hidden;
+}
+#soundcloud_clickable{
+  cursor:pointer;
+}
+#soundcloud_clickable:hover{
+  -webkit-transition: .4s ease-out 0.1s; 
+  -moz-transition: .4s ease-out 0.1s; 
+  -o-transition: .4s ease-out 0.1s;  
+  transition: .4s ease-out 0.1s; 
+  color:RED;
+}
+
+
+
+
