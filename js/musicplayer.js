@@ -1,30 +1,38 @@
+var volume = 60;
 $(document).ready(function(){
-	var mediaPlayer = jQuery('#mediaContainer');
-
-	mediaPlayer.jPlayer({
-		swfPath: '/swf/Jplayer.swf',
-
-		solution: "flash, html",
-
-		supplied: 'mp3',
-
+	var myPlaylist = new jPlayerPlaylist({
+		jPlayer: "#mediaContainer",
+		cssSelectorAncestor: "#mediaPlayer",
 		cssSelector: {
-			play: '#playButton',
-			stop: '#stopButton'
+			play: '#muted-dream',
+			stop: '#stopButton',
 		},
+	}, [
+	{
+		title:"The Branches",
+		artist:"Stanlin Joseph",
+		mp3:"media/The Branches.mp3",
+	}
+	], {
 
-		ready: function() {jQuery(this).jPlayer("setMedia", {
-			mp3: 'audios/The Branches.mp3'
-		});}
-		
+		swfPath: '/swf/Jplayer.swf',
+		solution: "flash, html",
+		supplied: 'mp3',
+		volume: '0.6'
 	});
 	$('#playbutton').click(function() {
-		$('#mediaContainer').jPlayer('play');
+		myPlaylist.play(0);
 	});
 	$('#stopbutton').click(function(){
 		$('#mediaContainer').jPlayer('stop');
 	});
+	$('#muted-dream').click(function(){
+		$('#musicbar').css('visibility', 'visible');
+		myPlaylist.play(0);
+		
+	});
 });
+
 $(function(){
 	$("#slider-vertical").slider({
 		orientation: "vertical",
@@ -34,7 +42,22 @@ $(function(){
 		value: 60,
 		slide: function(event, ui){
 			$("#amount").val(ui.value);
+			$('#mediaContainer').jPlayer('volume', ui.value/100);
 		}
 	})
 	$("#amount").val($("#slider-vertical").slider("value"));
+});
+
+$(function(){
+	$("#slider-horizontal").slider({
+		orientation: "horizontal",
+		range: "min",
+		min: 0,
+		max: 100,
+		value: 0,
+		slide: function(event, ui){
+			$("#amount").val(ui.value);
+		}
+	})
+	$("#amount").val($("#slider-horizontal").slider("value"));
 });

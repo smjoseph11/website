@@ -66,13 +66,7 @@ border-bottom: 3px solid BLACK
 .scores:hover{
 	border-style:inset;
 }
-.divider{
-    position:absolute;
-    left:25%;
-    top:10%;
-    bottom:10%;
-    border-left:1px solid RED;
-}
+
 #loading{
   visibility:hidden;
 }

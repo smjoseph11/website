@@ -1,22 +1,24 @@
-<nav class="navbar navbar-inverse navbar-fixed-bottom" style="display:none">
+<nav id="musicbar" class="navbar navbar-inverse navbar-fixed-bottom" style="visibility:hidden">
   <div id="mediaPlayer" class="container">
     <div id="mediaContainer"></div>
     <span id="playbutton" class="glyphicon glyphicon-play"></span>
     <span id="stopbutton" class="glyphicon glyphicon-stop"></span>
+    <div id="slider-horizontal"></div>
+    <div class="jp-current-time"></div>
      <span id="volumebutton" class="glyphicon glyphicon-volume-up">
         <div id="slider-vertical"></div>
     </span>
   </div>
 </nav>
-<div class="row" style="padding:50px;">
+<div class="row" style="padding-top:50px;">
   <div class="col-sm-4"></div>
     <div class="col-xs-12 col-sm-4">
-        <img src="img/nostalghia.jpg"></img>
     </div>
     <div class="col-sm-4"></div>
 </div>
-    <div class="row">
+    <div class="row" style="padding-bottom:50px">
       <div class="col-xs-12">
+        <img id="muted-dream" src="img/nostalghia.jpg" class="img-responsive center-block"></img><br>
         <p class="text-center">This is my first series called <i>In the Dark</i>. I will write "complete." when its all finished.</p> 
       </div>
     </div>
@@ -47,4 +49,4 @@
     <div class="col-xs-2">
     </div>
 </div>
-  <script src="js/musicplayer.js"></script>
+      <script src="js/musicplayer.js"></script>

@@ -31,7 +31,7 @@ function loadPage(url)
 
 			if(parseInt(msg)!=0)
 			{
-				$('#pageContent').html(msg);
+				$("#pageContent").html(msg);
 				$('#loading').css('visibility', 'hidden');
 				$('#soundcloud').hide();
 			}
