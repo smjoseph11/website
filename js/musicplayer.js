@@ -5,7 +5,7 @@ $(document).ready(function(){
 		cssSelectorAncestor: "#mediaPlayer",
 		cssSelector: {
 			play: '#muted-dream',
-			stop: '#stopButton',
+			pause: '#pauseButton',
 		},
 	}, [
 	{
@@ -20,19 +20,36 @@ $(document).ready(function(){
 		supplied: 'mp3',
 		volume: '0.6'
 	});
+
 	$('#playbutton').click(function() {
-		myPlaylist.play(0);
+		$('#mediaContainer').jPlayer('play');
+		$('#pausebutton').css('color', 'white');
+		$('#playbutton').css('color', 'grey');
+
 	});
-	$('#stopbutton').click(function(){
-		$('#mediaContainer').jPlayer('stop');
+	$('#pausebutton').click(function(){
+		myPlaylist.pause();
+		$('#playbutton').css('color', 'white');
+		$('#pausebutton').css('color', 'grey');
 	});
 	$('#muted-dream').click(function(){
 		$('#musicbar').css('visibility', 'visible');
+		$('.trash-bin').css('bottom','50px');
 		myPlaylist.play(0);
 		
 	});
+	$("#exit-player").click(function(){
+		$('#musicbar').css('visibility', 'hidden');	
+		$('.trash-bin').css('bottom','0px');
+		$('#mediaContainer').jPlayer('stop');
+	})
 });
-
+$('#volumebutton').hover(function(){
+	$('#slider-vertical').css({'opacity':'1', 'visibility':'visible'});
+})
+$('.volume').hover(function(){},function(){
+	$('#slider-vertical').css({'opacity':'0', 'visibility':'hidden'});
+})
 $(function(){
 	$("#slider-vertical").slider({
 		orientation: "vertical",
@@ -46,18 +63,4 @@ $(function(){
 		}
 	})
 	$("#amount").val($("#slider-vertical").slider("value"));
-});
-
-$(function(){
-	$("#slider-horizontal").slider({
-		orientation: "horizontal",
-		range: "min",
-		min: 0,
-		max: 100,
-		value: 0,
-		slide: function(event, ui){
-			$("#amount").val(ui.value);
-		}
-	})
-	$("#amount").val($("#slider-horizontal").slider("value"));
 });

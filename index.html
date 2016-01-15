@@ -64,13 +64,41 @@
       </div>
       </div><!--name-row-->
     </div><!--navbar-->
+    <nav id="musicbar" class="navbar navbar-inverse navbar-fixed-bottom" style="height:50px; visibility:hidden">
+  <div id="mediaPlayer" class="container" style="height:50px">
+    <div id="mediaContainer"></div>
+    <div class="row">
+      <div class="col-xs-2">
+    <span id="playbutton" class="glyphicon glyphicon-play"></span>
+    <span id="pausebutton" class="glyphicon glyphicon-pause">
+    </span>
+  </div>
+  <div class="col-xs-8" style="padding-top:15px">
+      <div class="jp-progress">
+          <div class="jp-seek-bar">
+            <div class="jp-play-bar"></div>
+          </div>
+        </div>
+  </div>
+  <div class="col-xs-2">
+      <div class="row volume">
+        <div class="col-xs-12">
+        <div id="volumebutton" class="glyphicon glyphicon-volume-up"></div>
+        <div id="slider-vertical"></div>
+      </div>
+      </div>
+  </div>
+  </div>
+  </div>
+</nav>  <!--music navbar-->
+    <div style="display:none" class="trash-bin"><img id="trash" data-toggle="tooltip" data-placement="left" title="Done?" src="img/trash.png"></img></div>
   <div id="pageContent">
       <br>
       <h1 class="text-center">Hello.</h1>
       <h3 class="text-center">Welcome to my website.</h3>
       <p class="text-center"> Here you can find my works, cv, and contact info.</p>
       <p class="text-center"> Have a donut.</p>
-      <p class="text-center"><img src="img/Thunder.png" alt="Donuts+Coffee"></p>  
+      <p class="text-center donut"><img src="img/Thunder.png" alt="Donuts+Coffee"></p>  
   </div>
  
   <!--internal js scripts-->
