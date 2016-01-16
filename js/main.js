@@ -17,8 +17,8 @@ $(document).ready(function(){
     	switch($('#trash').attr('src')){
     		case "img/trash.png":
 	    		console.log("trash");
-	    		$('body').css({'cursor':'url(../img/donut.png), pointer','height':'100%'});
-	    		$('#trash').attr('src','img/donut2.gif');
+	    		$('body').css({'cursor':'auto','height':'100%'});
+	    		$('#trash').attr('src','img/donut2.png');
 	    		$('#trash').tooltip('hide')
 	    		.attr('data-original-title', "Have another!")
 				.tooltip('fixTitle')
@@ -26,6 +26,7 @@ $(document).ready(function(){
 	    	break;
     		case "img/donut2.gif":
     		console.log("donut again");
+	    	$('body').css({'cursor':'url(../img/donut.png), pointer','height':'100%'});
     		$('#trash').attr('src','img/trash.png');
     		$('#trash').tooltip('hide')
     		.attr('data-original-title', "Done?")
@@ -34,7 +35,6 @@ $(document).ready(function(){
     		default:
     		console.log("more to come");
     	}
-        $('body').css({'cursor':'auto','height':'100%'});
     }
 });
 });

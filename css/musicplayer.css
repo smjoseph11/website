@@ -20,6 +20,15 @@
 	padding:10px;
 	cursor: pointer;
 }
+.glyphicon-forward{
+  color:white; 
+  font-size:1.5em;
+  padding:10px;
+  cursor: pointer;
+}
+.glyphicon-forward:hover{
+  color:red !important;
+}
 .glyphicon-pause:hover{
 	color:red !important;
 }
@@ -43,6 +52,7 @@
 }
 .glyphicon-menu-left{
   font-size:2.0em;
+  padding:5px;
   float:right;
   cursor:pointer;
 }

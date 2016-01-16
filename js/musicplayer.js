@@ -1,10 +1,11 @@
 var volume = 60;
 $(document).ready(function(){
+	var pics = ["img/The Branches.jpg", "img/Nostalghia1.gif"];
+	var currentpic = 0;
 	var myPlaylist = new jPlayerPlaylist({
 		jPlayer: "#mediaContainer",
-		cssSelectorAncestor: "#mediaPlayer",
+		cssSelectorAncestor: ".mediaPlayer",
 		cssSelector: {
-			play: '#muted-dream',
 			pause: '#pauseButton',
 		},
 	}, [
@@ -12,13 +13,22 @@ $(document).ready(function(){
 		title:"The Branches",
 		artist:"Stanlin Joseph",
 		mp3:"media/The Branches.mp3",
+   	    poster: "img/IMG_9252.JPG"
+
+	},
+	{
+		title:"The Muted-Colored Dream",
+		artist:"Stanlin Joseph",
+		mp3:"media/The Muted-Colored Dream.mp3",
+   	    poster: "img/Nostalghia1.gif"
+
 	}
 	], {
 
 		swfPath: '/swf/Jplayer.swf',
 		solution: "flash, html",
 		supplied: 'mp3',
-		volume: '0.6'
+		volume: '0.6',
 	});
 
 	$('#playbutton').click(function() {
@@ -32,11 +42,19 @@ $(document).ready(function(){
 		$('#playbutton').css('color', 'white');
 		$('#pausebutton').css('color', 'grey');
 	});
-	$('#muted-dream').click(function(){
+	$('#branches').click(function(){
 		$('#musicbar').css('visibility', 'visible');
 		$('.trash-bin').css('bottom','50px');
 		myPlaylist.play(0);
 		
+	});
+	$('#next').click(function(){
+		$('#branches').attr('src', pics[++currentpic]);
+		myPlaylist.next();
+	});
+	$('#previous').click(function(){
+		$('#branches').attr('src', pics[--currentpic]);
+		myPlaylist.previous();
 	});
 	$("#exit-player").click(function(){
 		$('#musicbar').css('visibility', 'hidden');	
