@@ -34,11 +34,14 @@
           <!--[if lt IE 8]>
               <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
               <![endif]-->
-    <div class="navbar container-fluid navbar-static-top" role="navigation">
+    <nav id="myNavbar" class="navbar container-fluid navbar-fixed-top">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+          </button>
+          <div id="navbar-collapse-1"class="collapse navbar-collapse">
           <div class="row">
            <div class="col-xs-12 col-sm-9 nav-border">
              <div id="menu" class="row" style="font-family: 'Source Code Pro'; font-weight:200;">
-                  <a style="color:black;" href="#music">						
+                <a style="color:black;" href="#music">						
                    <div class="col-sm-3 text-center selected"><h3>MUSIC</h3></div>
                </a>
                <a style="color:black;" href="#code">						
@@ -55,15 +58,17 @@
       <div class="col-sm-3 nav-border-2">
       </div>
     </div>
+          </div>
+
         <div class="row">
          <div class="col-xs-6">
             <img id="loading" src="img/ajax_load.gif" alt="loading" />
          </div>
-         <div style="padding-right:50px;padding-top:15px;font-family:'Nosifer';" class="col-xs-6 text-right name-border">
+         <div style="padding-right:50px;padding-top:15px;font-family:'Nosifer';" class="col-xs-6 text-right my-name">
           <h3><a style="color:#990000;" href="/">Stanlin Joseph</a></h3>
       </div>
       </div><!--name-row-->
-    </div><!--navbar-->
+    </nav><!--navbar-->
     <nav id="musicbar" class="navbar navbar-inverse navbar-fixed-bottom" style="height:50px; visibility:hidden">
   <div class="mediaPlayer container" style="height:50px">
     <div id="mediaContainer"></div>
@@ -99,7 +104,7 @@
       <h1 class="text-center">Hello.</h1>
       <h3 class="text-center">Welcome to my website.</h3>
       <p class="text-center"> Here you can find my works, cv, and contact info.</p>
-      <p class="text-center"> Enjoy a donut.</p>
+      <p class="text-center"> Donut if you like.</p>
       <p class="text-center donut"><img src="img/Thunder.png" alt="Donuts+Coffee"></p>  
   </div>
  

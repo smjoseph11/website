@@ -4,11 +4,31 @@
    Author's custom styles
    ========================================================================== */
 .navbar-static-top{
+  color:#e6e6e6;
 	position: relative;
 	bottom:50px;
 }
+.navbar-fixed-top{
+  margin-bottom:50px;
+  background-color:#e6e6e6;
+  z-index:1;
+}
+#nav{
+      -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.navbar-toggle{
+  position: fixed;
+  z-index:2;
+  top: 0px;
+  right: 0px;
+  background-color: rgba(153, 0, 0, 0.4);
+}
 .nav-border{
   border-bottom: 1px solid black;
+  border-right: 1px solid black;
 }
 .row-eq-height {
   display: -webkit-box;
@@ -18,7 +38,6 @@
   align-items: center;
 }
 .nav-border-2{
-border-left:2px solid black;
 height: 57px;
 }
 @media only screen and (max-width:47.8em){
@@ -27,7 +46,7 @@ height: 57px;
     height:0px;
   }
 }
-.name-border{
+.my-name{
 height:57px;
 border-left: 4px solid BLACK;
 border-bottom: 4px solid BLACK;
@@ -39,16 +58,6 @@ border-bottom: 3px solid BLACK
 .cv-border{
 	border-bottom: 1px solid BLACK;
 
-}
-.vdivide [class*='col-']:not(:last-child):after {
-  background: #cccccc;
-  width: 1px;
-  content: "";
-  display:block;
-  position: absolute;
-  top:10%;
-  bottom: 10%;
-  right: 0;
 }
 a:hover{
   text-decoration: none;
@@ -92,6 +101,7 @@ img.resize{
 }
 
 body {
+      margin-top: 50px;
   padding-top: 50px;
   padding-bottom: 20px;
 }

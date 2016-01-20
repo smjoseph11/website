@@ -1,4 +1,7 @@
 $(document).ready(function(){
+ $("#myNavbar a").click(function(){
+ 	  $(".navbar-collapse").collapse('hide');
+ });
  $('[data-toggle="tooltip"]').tooltip(); 
 	checkURL();
 	$('a').click(function(e){
@@ -10,7 +13,7 @@ $(document).ready(function(){
 		$('body').css({'cursor':'url(../img/donut.png), pointer','height':'100%'});
 	});
 	    	console.log($('#trash').attr('src'));
-	//some game for awhile at least
+	//some game
 	$('.trash-bin').on({
     'click': function(){
 
@@ -72,4 +75,10 @@ function loadPage(url)
 }
 $(document).on('click', '#soundcloud_clickable', function(){
 	$("#soundcloud").slideToggle("slow");
+});
+$( window ).scroll(function() {
+	  $('.navbar-toggle').show();
+});
+$(document).on('click', '.navbar-toggle', function(){
+    $('#nav').toggleClass('navbar-fixed-top');	
 });
