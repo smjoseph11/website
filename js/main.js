@@ -1,4 +1,6 @@
+var lastScrollTop = 0;
 $(document).ready(function(){
+ navHeight = $('#nav').height().toString();
  $("#myNavbar a").click(function(){
  	  $(".navbar-collapse").collapse('hide');
  });
@@ -78,8 +80,21 @@ $(document).on('click', '#soundcloud_clickable', function(){
 	$("#soundcloud").slideToggle("slow");
 });
 $( window ).scroll(function() {
-	  $('.navbar-toggle').show();
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+	  $('#otherButton').show();
+	  $('#nav').animate({
+		height:'0px'
+	  });
+   } else {
+      $('#nav').animate({
+      	height: navHeight.concat('px')
+      })
+   }
+   lastScrollTop = st;
 });
-$(document).on('click', '.navbar-toggle', function(){
-    $('#nav').toggleClass('navbar-fixed-top');	
+$(document).on('click', '#otherButton', function(){	
+	$('#nav').animate({
+		height:'toggle'
+	});
 });
