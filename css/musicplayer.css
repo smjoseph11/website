@@ -22,7 +22,7 @@
 }
 .glyphicon-forward{
   color:white; 
-  font-size:1.5em;
+  font-size:1.0em;
   padding:10px;
   cursor: pointer;
 }
@@ -31,6 +31,15 @@
 }
 .glyphicon-pause:hover{
 	color:red !important;
+}
+.glyphicon-backward{
+  color:white; 
+  font-size:1.0em;
+  padding:10px;
+  cursor: pointer;
+}
+.glyphicon-backward:hover{
+  color:red !important;
 }
 .glyphicon-volume-up{
 	cursor: pointer;
@@ -51,6 +60,7 @@
   transition:opacity 0.5s linear;
 }
 .glyphicon-menu-left{
+  display:none;
   font-size:2.0em;
   padding:5px;
   float:right;
@@ -69,6 +79,7 @@
   box-shadow: 0 0 0 2px #f00;
 }
 .glyphicon-menu-right{
+  display:none;
   font-size:2.0em;
   padding:5px;
   float:left;
@@ -87,10 +98,11 @@
   box-shadow: 0 0 0 2px #f00;
 }
 
-#muted-dream{
+#branches{
   border:3px solid #e6e6e6;
+  max-height:463px;
 }
-#muted-dream:hover{
+#branches:hover{
   -webkit-transition: .2s ease-out 0.1s; 
   -moz-transition: .2s ease-out 0.1s; 
   -o-transition: .2s ease-out 0.1s;  
@@ -119,13 +131,18 @@
     background-color: #fff;
     border-radius: 20px 20px 20px 20px;
 }
-
+ 
 .jp-time-holder {
+    padding-top: 15px;
     color: #FFF;
     font-size: 12px;
     line-height: 14px;
-    position: absolute;
-    right: 90px;
-    top: 14px;
     text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+.volume{
+  height:50px;
+}
+#musicPlayerText{
+  color:white;
 }

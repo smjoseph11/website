@@ -1,10 +1,9 @@
 var volume = 60;
 $(document).ready(function(){
 	var pics = ["img/The Branches.jpg", "img/Nostalghia1.gif"];
-	var currentpic = 0;
 	var myPlaylist = new jPlayerPlaylist({
 		jPlayer: "#mediaContainer",
-		cssSelectorAncestor: ".mediaPlayer",
+		cssSelectorAncestor: ".media-player",
 		cssSelector: {
 			pause: '#pauseButton',
 		},
@@ -12,8 +11,8 @@ $(document).ready(function(){
 	{
 		title:"The Branches",
 		artist:"Stanlin Joseph",
-		mp3:"media/The Branches.mp3",
-   	    poster: "img/IMG_9252.JPG"
+		mp3:"media/Branches Version.mp3",
+   	    poster: "img/The Branches.JPG"
 
 	},
 	{
@@ -22,6 +21,12 @@ $(document).ready(function(){
 		mp3:"media/The Muted-Colored Dream.mp3",
    	    poster: "img/Nostalghia1.gif"
 
+	},
+	{
+		title:"Rollercoaster Moon",
+		artist:"Stanlin Joseph",
+		mp3:"media/Rollercoaster Moon.mp3",
+   	    poster: "img/Rollercoaster.jpg"
 	}
 	], {
 
@@ -29,8 +34,11 @@ $(document).ready(function(){
 		solution: "flash, html",
 		supplied: 'mp3',
 		volume: '0.6',
+		play: function(e) {
+			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
+			$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
+		}
 	});
-
 	$('#playbutton').click(function() {
 		$('#mediaContainer').jPlayer('play');
 		$('#pausebutton').css('color', 'white');
@@ -45,29 +53,32 @@ $(document).ready(function(){
 	$('#branches').click(function(){
 		$('#musicbar').css('visibility', 'visible');
 		$('.trash-bin').css('bottom','50px');
-		myPlaylist.play(0);
-		
-	});
-	$('#next').click(function(){
-		$('#branches').attr('src', pics[++currentpic]);
+		myPlaylist.play(myPlaylist.current);
+	}); 
+	$('.next').click(function(){	
 		myPlaylist.next();
+		$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
 	});
-	$('#previous').click(function(){
-		$('#branches').attr('src', pics[--currentpic]);
+	$('.previous').click(function(){
 		myPlaylist.previous();
+		$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
 	});
 	$("#exit-player").click(function(){
 		$('#musicbar').css('visibility', 'hidden');	
 		$('.trash-bin').css('bottom','0px');
 		$('#mediaContainer').jPlayer('stop');
-	})
+	});
+	$("#branches").click(function(){
+		$('#next').show();
+		$('#previous').show();
+	});
 });
 $('#volumebutton').hover(function(){
 	$('#slider-vertical').css({'opacity':'1', 'visibility':'visible'});
-})
+});
 $('.volume').hover(function(){},function(){
 	$('#slider-vertical').css({'opacity':'0', 'visibility':'hidden'});
-})
+});
 $(function(){
 	$("#slider-vertical").slider({
 		orientation: "vertical",
@@ -82,3 +93,6 @@ $(function(){
 	})
 	$("#amount").val($("#slider-vertical").slider("value"));
 });
+$("#musicbar").on('change', function(){
+		console.log("musicbar changed");
+	});
