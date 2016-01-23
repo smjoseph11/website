@@ -9,11 +9,16 @@
 	bottom:50px;
 }
 .navbar-fixed-top{
-  background-color:#e6e6e6;
   z-index:1;
 }
 #myNavbar{
   border:0px;
+}
+#navbar-collapse-1{
+  border:0;
+}
+#menu{
+  background-color:#e6e6e6;
 }
 #nav{
       -webkit-transition: all 0.5s ease;
@@ -32,6 +37,11 @@
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
+@media only screen and (max-width:47.8em){
+  .nav-border{
+    border-right:none;
+  }
+}
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
@@ -41,12 +51,6 @@
 }
 .nav-border-2{
 height: 57px;
-}
-@media only screen and (max-width:47.8em){
-  .nav-border-2{
-    border-left:none;
-    height:0px;
-  }
 }
 .my-name{
 height:57px;
