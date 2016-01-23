@@ -77,6 +77,11 @@ function loadPage(url)
 $(document).on('click', '#soundcloud_clickable', function(){
 	$("#soundcloud").slideToggle("slow");
 });
+$(window).on('resize', function(){
+      if (win.height() < 768) {
+      	
+      }
+});
 $( window ).scroll(function() {
 	  $('.navbar-toggle').show();
 });
