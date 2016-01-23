@@ -24,7 +24,7 @@ $(document).ready(function(){
 				.tooltip('fixTitle')
 				.tooltip('show');
 	    	break;
-    		case "img/donut2.gif":
+    		case "img/donut2.png":
     		console.log("donut again");
 	    	$('body').css({'cursor':'url(../img/donut.png), pointer','height':'100%'});
     		$('#trash').attr('src','img/trash.png');
@@ -32,6 +32,7 @@ $(document).ready(function(){
     		.attr('data-original-title', "Done?")
 			.tooltip('fixTitle')
 			.tooltip('show');
+			break;
     		default:
     		console.log("more to come");
     	}
