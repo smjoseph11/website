@@ -8,17 +8,36 @@
 	position: relative;
 	bottom:50px;
 }
+#theButton{
+  z-index:3;
+}
+@media only screen and (max-width:768px){
+ #otherButton{
+    display:none;
+  }
+}
 .navbar-fixed-top{
   z-index:1;
 }
 #myNavbar{
   border:0px;
 }
-#navbar-collapse-1{
+@media only screen and (max-width:768px){
+  #myNavbar{
+    padding-bottom:23px;
+  }
+}
+
+#navbarCollapse1{
   border:0;
 }
+.nav-background{
+  background-color: pink;
+}
 #menu{
-  background-color:#e6e6e6;
+}
+#pageContent{
+  padding-top:50px;
 }
 .navbar-toggle{
   position: fixed;
@@ -31,7 +50,7 @@
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
-@media only screen and (max-width:47.8em){
+@media only screen and (max-width:768px){
   .nav-border{
     border-right:none;
   }
@@ -101,6 +120,6 @@ img.resize{
 }
 
 body {
-  margin-top: 50px;
+  padding-top: 100px;
   padding-bottom: 20px;
 }

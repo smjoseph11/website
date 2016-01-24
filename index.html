@@ -35,11 +35,11 @@
               <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
               <![endif]-->
     <nav id="myNavbar" class="navbar container-fluid navbar-fixed-top">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+          <button id="theButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse1" aria-expanded="false">
           </button>
-          <button id="otherButton" type="button" class="navbar-toggle" aria-expanded="false" style="display:none">
+          <button id="otherButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse1" aria-expanded="false" style="display:none">
           </button>
-          <div id="navbar-collapse-1"class="collapse navbar-collapse">
+          <div id="navbarCollapse1" class="collapse">
           <div id="nav" class="row">
            <div class="col-xs-12 col-sm-9 nav-border">
              <div id="menu" class="row" style="font-family: 'Source Code Pro'; font-weight:200;">
@@ -59,9 +59,7 @@
           </div>
       <div style="opacity:0" class="col-sm-3 nav-border-2">
       </div>
-    </div>
-          </div>
-    </nav><!--navbar-->
+      </div>
       <div style="margin:0px" class="row">
          <div class="col-xs-6">
             <img id="loading" src="img/ajax_load.gif" alt="loading" />
@@ -70,6 +68,8 @@
           <h3><a style="color:#990000;" href="/">Stanlin Joseph</a></h3>
         </div>
       </div><!--name-row-->
+        </div>
+    </nav><!--navbar-->
     <nav id="musicbar" class="navbar navbar-inverse navbar-fixed-bottom" style="visibility:hidden">
   <div id="css-ancestor" class="media-player" style="height:50px">
     <div id="mediaContainer"></div>

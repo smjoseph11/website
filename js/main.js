@@ -1,5 +1,20 @@
 var lastScrollTop = 0;
 $(document).ready(function(){
+$(".collapse").on('show.bs.collapse', function(){
+	$('body').animate({
+		'padding-top': 300
+	}, 300
+	);
+});
+$(".collapse").on('hide.bs.collapse', function(){
+	$('body').animate({
+		'padding-top': 100
+	}, 300
+	);
+});
+	if($(window).width() >= 768){
+		$('#navbarCollapse1').addClass('in');
+	}
  navHeight = $('#nav').height().toString();
  $("#myNavbar a").click(function(){
  	  $(".navbar-collapse").collapse('hide');
@@ -79,22 +94,32 @@ function loadPage(url)
 $(document).on('click', '#soundcloud_clickable', function(){
 	$("#soundcloud").slideToggle("slow");
 });
+$(window).resize(function(){
+	if($(this).width() >= 768){
+		$('#navbarCollapse1').addClass('in');
+	}
+	else{
+		$('#navbarCollapse1').removeClass('in');
+	}
+});
 $( window ).scroll(function() {
    var st = $(this).scrollTop();
+   if(st==0){
+   	$(".navbar-toggle").click();
+   	$('#myNavbar').removeClass('nav-background');
+   }
+   	  $('#otherButton').show();
    if (st > lastScrollTop){
-	  $('#otherButton').show();
-	  $('#nav').animate({
-		height:'0px'
-	  });
+	  $('.collapse').collapse("hide");
    } else {
-      $('#nav').animate({
-      	height: navHeight.concat('px')
-      })
+	  if(st == 0){
+	    $('#otherButton').hide();
+		$('.collapse').collapse("show");
+	}
    }
    lastScrollTop = st;
 });
-$(document).on('click', '#otherButton', function(){	
-	$('#nav').animate({
-		height:'toggle'
-	});
+$(document).on('click', '.navbar-toggle', function(){
+	$('.collapse').collapse("toggle");
+	$('#myNavbar').addClass('nav-background');
 });
