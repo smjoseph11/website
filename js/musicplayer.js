@@ -1,5 +1,32 @@
 var volume = 60;
 $(document).ready(function(){
+	var moved=false;
+	if($(window).width() < 768){
+		$('.music-buttons').css('padding-top','0px');
+		moveFW();
+		moved=true;
+	}
+	function moveFW(){
+		$(".move-FW").toggle();
+	}
+	var moveFWonce = _.once(moveFW, 300);
+
+	$(window).on('resize', function(){
+		if($(window).width() < 768){
+			$('.music-buttons').css('padding-top','0px');
+			if(!moved){
+				moveFW();
+				moved=true;
+			}
+		}
+		else{
+			$('.music-buttons').css('padding-top','11px');
+			if(moved){
+				moveFW();
+				moved=false;
+			}
+		}
+	});
 	var pics = ["img/The Branches.jpg", "img/Nostalghia1.gif"];
 	var myPlaylist = new jPlayerPlaylist({
 		jPlayer: "#mediaContainer",

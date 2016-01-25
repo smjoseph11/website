@@ -58,17 +58,25 @@
         </div>
     </nav><!--navbar-->
     <nav id="musicbar" class="navbar navbar-inverse navbar-fixed-bottom" style="visibility:hidden">
-  <div id="css-ancestor" class="media-player" style="height:50px">
+  <div id="css-ancestor" class="media-player container-fluid" style="height:50px">
     <div id="mediaContainer"></div>
     <div class="row">
-      <div class="col-xs-2 text-center">
-    <div class="previous glyphicon glyphicon-backward">
-    </div>
-    <div id="playbutton" class="glyphicon glyphicon-play"></div>
-        <div id="pausebutton" class="glyphicon glyphicon-pause">
-    </div>
-    <div class="next glyphicon glyphicon-forward">
-    </div>
+      <div class="music-buttons col-xs-2 text-center">
+      <div class="row">
+        <div class="move-FW previous glyphicon glyphicon-backward">
+        </div>
+        <div id="playbutton" class="glyphicon glyphicon-play"></div>
+            <div id="pausebutton" class="glyphicon glyphicon-pause">
+        </div>
+        <div class="move-FW next glyphicon glyphicon-forward">
+        </div>
+      </div>
+      <div class="move-FW row" style="display:none">
+        <div class="previous glyphicon glyphicon-backward">
+        </div>
+        <div class="next glyphicon glyphicon-forward">
+        </div>
+      </div>
   </div>
   <div class="col-xs-8" style="padding-top:15px">
       <div class="jp-progress">
@@ -78,14 +86,14 @@
         </div><p id="musicPlayerText" class="music-text text-center"></p>
 
   </div>
-  <div class="col-xs-1">
+  <div style="padding:0 4%" class="col-xs-1 time">
     <div class="jp-time-holder">
         <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
       </div>
   </div>
   <div class="col-xs-1 volume">
       <div class="row">
-        <div class="col-xs-12">
+        <div style="height:50px; padding:10px 5%" class="col-xs-12">
         <div id="volumebutton" class="glyphicon glyphicon-volume-up"></div>
         <div id="slider-vertical"></div>
       </div>
@@ -110,6 +118,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/vendor/jquery.jplayer.min.js"></script>
     <script src="js/vendor/jplayer.playlist.min.js"></script>
+    <script src="js/vendor/underscore.js"></script>
     <!--internal js scripts-->
     <script src="js/main.js"></script>
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

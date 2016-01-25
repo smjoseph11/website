@@ -5,10 +5,13 @@
 .scores:hover{
   border-style:inset;
 }
+.music-buttons{
+  padding-top:11px;
+}
 .glyphicon-play{
 	color:white; 
-	font-size:1.5em;
-	padding:10px;
+	font-size:1.2em;
+	padding:0 5%;
 	cursor: pointer;
 }
 #playbutton:hover{
@@ -16,14 +19,14 @@
 }
 .glyphicon-pause{
 	color:white; 
-	font-size:1.5em;
-	padding:10px;
+	font-size:1.2em;
+	padding:0 5%;
 	cursor: pointer;
 }
 .glyphicon-forward{
   color:white; 
   font-size:1.0em;
-  padding:10px;
+  padding:0 5%;
   cursor: pointer;
 }
 .glyphicon-forward:hover{
@@ -35,7 +38,7 @@
 .glyphicon-backward{
   color:white; 
   font-size:1.0em;
-  padding:10px;
+  padding:0 5%;
   cursor: pointer;
 }
 .glyphicon-backward:hover{
@@ -45,7 +48,7 @@
 	cursor: pointer;
 	color:white; 
 	font-size:1.5em;
-	padding:10px;
+	padding:0 5%;
 }
 .glyphicon-volume-up:hover{
 	color:red;
@@ -53,6 +56,7 @@
 
 #slider-vertical{
   position:relative;
+  padding:0 5%;
   bottom:185px;
   left:14px;
   height:150px;
