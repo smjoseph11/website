@@ -1,20 +1,57 @@
 var lastScrollTop = 0;
+var donuts = 3;
+var resizeTimer;
+var xsAction=false;
 $(document).ready(function(){
-$(".collapse").on('show.bs.collapse', function(){
-	$('body').animate({
-		'padding-top': 300
-	}, 300
-	);
-});
-$(".collapse").on('hide.bs.collapse', function(){
-	$('body').animate({
-		'padding-top': 100
-	}, 300
-	);
-});
-	if($(window).width() >= 768){
-		$('#navbarCollapse1').addClass('in');
+	var currentWidth = $(window).width();
+	if(currentWidth >= 768){
+			$('#navbarCollapse1').addClass('in');
+			$('body').css('padding-top','100px');
 	}
+	else{
+			$('body').css('padding-top','0px');
+
+	}
+	$(".collapse").on('show.bs.collapse', function(){
+		currentWidth = $(window).width();
+			if(currentWidth < 768){
+				$('body').animate({
+					'padding-top': 280
+				}, 300
+				);
+			}
+			else{
+				$('body').animate({
+					'padding-top': 100
+				}, 300
+				);
+			}
+	});
+	$(".collapse").on('hide.bs.collapse', function(){
+		currentWidth = $(window).width();
+			$('body').animate({
+				'padding-top': 0
+			}, 300
+			);
+	});
+	$(window).on('resize', function(){
+		currentWidth = $(window).width();
+		if(currentWidth >= 768 && $(window).scrollTop() == 0){
+			xsAction=true;
+			$('.collapse').collapse("show");
+		}
+		else{
+			if(xsAction==true){
+				$('body').css('padding-top', '280');
+				$('.collapse').collapse("hide");
+				$('body').animate({
+					'padding-top': 0
+				}, 500
+				);
+				xsAction=false;
+			}
+		}
+	});
  navHeight = $('#nav').height().toString();
  $("#myNavbar a").click(function(){
  	  $(".navbar-collapse").collapse('hide');
@@ -31,31 +68,51 @@ $(".collapse").on('hide.bs.collapse', function(){
 	});
 	    	console.log($('#trash').attr('src'));
 	//some game
-	$('.trash-bin').on({
-    'click': function(){
-
+	$('.trash-bin').on({'click': function(){
     	switch($('#trash').attr('src')){
     		case "img/trash.png":
+    			donuts--;
 	    		console.log("trash");
 	    		$('body').css({'cursor':'auto','height':'100%'});
-	    		$('#trash').attr('src','img/donut2.png');
+	    		if(donuts==0){
+	    			console.log("wood");
+					$('body').css({'cursor':'auto','height':'100%'});
+					$('#trash').attr('src','img/Wood.png');
+					$('#trash').tooltip('hide')
+					.attr('data-original-title', "All done, but here's a piece of wood instead")
+					.tooltip('fixTitle')
+					.tooltip('show');
+	    		}
+	    		else{
+		    		$('#trash').attr('src','img/donut2.png');
+		    		$('#trash').tooltip('hide')
+		    		.attr('data-original-title', "Have another!")
+					.tooltip('fixTitle')
+					.tooltip('show');
+				}
+	    		break;
+    		case "img/donut2.png":
+	    		console.log("donut again");
+		    	$('body').css({'cursor':'url(../img/donut.png), pointer','height':'100%'});
+	    		$('#trash').attr('src','img/trash.png');
 	    		$('#trash').tooltip('hide')
-	    		.attr('data-original-title', "Have another!")
+	    		.attr('data-original-title', "Done?")
 				.tooltip('fixTitle')
 				.tooltip('show');
-	    	break;
-    		case "img/donut2.png":
-    		console.log("donut again");
-	    	$('body').css({'cursor':'url(../img/donut.png), pointer','height':'100%'});
-    		$('#trash').attr('src','img/trash.png');
-    		$('#trash').tooltip('hide')
-    		.attr('data-original-title', "Done?")
-			.tooltip('fixTitle')
-			.tooltip('show');
 			break;
+			case "img/Wood.png":
+			    console.log("wood!");
+	    		$('body').css({'cursor':'url(../img/wood-pointer.jpg), pointer','height':'100%'});
+    			$('#trash').attr('src','img/fire.gif');
+    			$('#trash').tooltip('hide')
+    			.attr('data-original-title', "Burn?")
+				.tooltip('fixTitle')
+				.tooltip('show');
+				break;
     		default:
     		console.log("more to come");
     	}
+
     }
 });
 });
@@ -94,25 +151,17 @@ function loadPage(url)
 $(document).on('click', '#soundcloud_clickable', function(){
 	$("#soundcloud").slideToggle("slow");
 });
-$(window).resize(function(){
-	if($(this).width() >= 768){
-		$('#navbarCollapse1').addClass('in');
-	}
-	else{
-		$('#navbarCollapse1').removeClass('in');
-	}
-});
 $( window ).scroll(function() {
    var st = $(this).scrollTop();
    if(st==0){
-   	$(".navbar-toggle").click();
    	$('#myNavbar').removeClass('nav-background');
    }
    	  $('#otherButton').show();
    if (st > lastScrollTop){
 	  $('.collapse').collapse("hide");
+	  $('#myNavbar').removeClass('nav-background');
    } else {
-	  if(st == 0){
+	  if(st == 0 && $(window).width()>=768){
 	    $('#otherButton').hide();
 		$('.collapse').collapse("show");
 	}
@@ -121,5 +170,12 @@ $( window ).scroll(function() {
 });
 $(document).on('click', '.navbar-toggle', function(){
 	$('.collapse').collapse("toggle");
-	$('#myNavbar').addClass('nav-background');
+	if($(window).scrollTop()!=0){
+		$('#myNavbar').toggleClass('nav-background');
+	}
 });
+$(document).on('click', '.page', function(){
+	if($(window).width()<768){
+		$('.collapse').collapse("hide");
+	}
+})

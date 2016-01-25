@@ -11,7 +11,7 @@
 #theButton{
   z-index:3;
 }
-@media only screen and (max-width:768px){
+@media only screen and (max-width:767px){
  #otherButton{
     display:none;
   }
@@ -21,8 +21,9 @@
 }
 #myNavbar{
   border:0px;
+  padding-right:0;
 }
-@media only screen and (max-width:768px){
+@media only screen and (max-width:767px){
   #myNavbar{
     padding-bottom:23px;
   }
@@ -50,7 +51,7 @@
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
-@media only screen and (max-width:768px){
+@media only screen and (max-width:767px){
   .nav-border{
     border-right:none;
   }
@@ -61,6 +62,7 @@
   display: -ms-flexbox;
   display: flex;
   align-items: center;
+  padding-bottom:50px;
 }
 .nav-border-2{
 height: 57px;
@@ -81,7 +83,14 @@ border-bottom: 3px solid BLACK
 a:hover{
   text-decoration: none;
 }
-.col-sm-3.text-center.selected:hover{
+.page h3{
+ margin:0;
+}
+.page{
+  padding-top:20px;
+  padding-bottom:10px;
+}
+.col-sm-3.text-center.page:hover{
   -webkit-transition: .4s ease-out 0.1s; 
   -moz-transition: .4s ease-out 0.1s; 
   -o-transition: .4s ease-out 0.1s;  
@@ -120,6 +129,6 @@ img.resize{
 }
 
 body {
-  padding-top: 100px;
+  background-color:#e6e6e6;
   padding-bottom: 20px;
 }
