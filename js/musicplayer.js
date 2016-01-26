@@ -69,8 +69,6 @@ $(document).ready(function(){
 			$('#pausebutton').css('color', 'grey');
 		}
 	});
-	
-	var lazyPlay = _.debounce(function(){myPlaylist.play(myPlaylist.current)},500);
 	$('#playbutton').click(function() {
 		$('#mediaContainer').jPlayer('play');
 
@@ -80,27 +78,25 @@ $(document).ready(function(){
 	});
 	$('#branches').click(function(){
 		$('#musicbar').show();
-		$('#next').show();
-		$('#previous').show();
 		$('.trash-bin').css('bottom','50px');
-		lazyPlay();
+		myPlaylist.play(myPlaylist.current);
 	}); 
 	$('.next').click(function(){	
 		myPlaylist.next();
-		$('#branches').hide();
 		$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
-		$('#branches').fadeIn(1000);
 	});
 	$('.previous').click(function(){
 		myPlaylist.previous();
-		$('#branches').hide();
 		$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
-		$('#branches').fadeIn(1000);
 	});
 	$("#exit-player").click(function(){
 		$('#musicbar').hide();	
 		$('.trash-bin').css('bottom','0px');
 		$('#mediaContainer').jPlayer('stop');
+	});
+	$("#branches").click(function(){
+		$('#next').show();
+		$('#previous').show();
 	});
 });
 $('#volumebutton').hover(function(){

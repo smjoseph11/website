@@ -11,7 +11,6 @@ function scrollBottom(){
 };
 var lazyScrollBottom = _.debounce(scrollBottom, 500);
 $(document).ready(function(){
-	$('#fullpage').fullpage();
 	var currentWidth = $(window).width();
 	if(currentWidth >= 768 && $(window).scrollTop() == 0){
 			$('#navbarCollapse1').addClass('in');
