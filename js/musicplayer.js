@@ -2,7 +2,6 @@ var volume = 60;
 $(document).ready(function(){
 	var moved=false;
 	if($(window).width() < 768){
-		$('.music-buttons').css('padding-top','0px');
 		moveFW();
 		moved=true;
 	}
@@ -13,14 +12,12 @@ $(document).ready(function(){
 
 	$(window).on('resize', function(){
 		if($(window).width() < 768){
-			$('.music-buttons').css('padding-top','0px');
 			if(!moved){
 				moveFW();
 				moved=true;
 			}
 		}
 		else{
-			$('.music-buttons').css('padding-top','11px');
 			if(moved){
 				moveFW();
 				moved=false;
@@ -64,21 +61,23 @@ $(document).ready(function(){
 		play: function(e) {
 			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
 			$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
+			$('#pausebutton').css('color', 'white');
+			$('#playbutton').css('color', 'grey');
+		},
+		pause: function(e){
+			$('#playbutton').css('color', 'white');
+			$('#pausebutton').css('color', 'grey');
 		}
 	});
 	$('#playbutton').click(function() {
 		$('#mediaContainer').jPlayer('play');
-		$('#pausebutton').css('color', 'white');
-		$('#playbutton').css('color', 'grey');
 
 	});
 	$('#pausebutton').click(function(){
 		myPlaylist.pause();
-		$('#playbutton').css('color', 'white');
-		$('#pausebutton').css('color', 'grey');
 	});
 	$('#branches').click(function(){
-		$('#musicbar').css('visibility', 'visible');
+		$('#musicbar').show();
 		$('.trash-bin').css('bottom','50px');
 		myPlaylist.play(myPlaylist.current);
 	}); 
@@ -91,7 +90,7 @@ $(document).ready(function(){
 		$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
 	});
 	$("#exit-player").click(function(){
-		$('#musicbar').css('visibility', 'hidden');	
+		$('#musicbar').hide();	
 		$('.trash-bin').css('bottom','0px');
 		$('#mediaContainer').jPlayer('stop');
 	});

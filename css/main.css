@@ -8,6 +8,11 @@
 	position: relative;
 	bottom:50px;
 }
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 #theButton{
   z-index:3;
 }
@@ -62,7 +67,6 @@
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  padding-bottom:50px;
 }
 .nav-border-2{
 height: 57px;
@@ -120,5 +124,5 @@ img.resize{
 
 body {
   background-color:#e6e6e6;
-  padding-bottom: 20px;
+  padding-bottom: 120px;
 }

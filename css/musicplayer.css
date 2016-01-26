@@ -13,6 +13,12 @@
 .music-buttons{
   padding-top:11px;
 }
+.time-vol{
+  padding-top:11px;
+}
+.time{
+  padding-top:4px;
+}
 .glyphicon-play{
 	color:white; 
 	font-size:1.2em;
@@ -62,8 +68,8 @@
 #slider-vertical{
   position:relative;
   padding:0 5%;
-  bottom:185px;
-  left:14px;
+  bottom:180px;
+  left:10px;
   height:150px;
   opacity: 0;
   transition:opacity 0.5s linear;
@@ -142,7 +148,6 @@
 }
  
 .jp-time-holder {
-    padding-top: 15px;
     color: #FFF;
     font-size: 12px;
     line-height: 14px;
@@ -158,14 +163,25 @@
   transition: .4s ease-out 0.1s; 
   color:RED;
 }
-@media only screen and (max-width:548px){
   #soundcloud_clickable .text-center{
-    font-size:1.5em;
+    font-size:1.0em;
+    font-size:3.0vw;
   }
-}
 .volume{
   height:50px;
 }
+#volumebutton{
+ padding-bottom:10px;
+}
+.poster{
+  padding:0;
+}
+#musicbar{
+  display:none;
+}
 #musicPlayerText{
+  font-size:12px;
+  line-height: 14px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
   color:white;
 }

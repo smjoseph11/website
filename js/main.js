@@ -2,9 +2,17 @@ var lastScrollTop = 0;
 var donuts = 3;
 var resizeTimer;
 var xsAction=false;
+function scrollBottom(){
+	$('html, body').animate({
+		scrollTop: $(document).height()-$(window).height()},
+		"slow",
+		"easeOutQuint"
+	);
+};
+var lazyScrollBottom = _.debounce(scrollBottom, 500);
 $(document).ready(function(){
 	var currentWidth = $(window).width();
-	if(currentWidth >= 768){
+	if(currentWidth >= 768 && $(window).scrollTop() == 0){
 			$('#navbarCollapse1').addClass('in');
 			$('body').css('padding-top','100px');
 	}
@@ -149,7 +157,9 @@ function loadPage(url)
 	});
 }
 $(document).on('click', '#soundcloud_clickable', function(){
-	$("#soundcloud").slideToggle("slow");
+	oldWindow = $(window).height();
+	$("#soundcloud").slideToggle();
+	lazyScrollBottom();
 });
 $( window ).scroll(function() {
    var st = $(this).scrollTop();
