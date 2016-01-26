@@ -156,13 +156,13 @@ $( window ).scroll(function() {
    if(st==0){
    	$('#myNavbar').removeClass('nav-background');
    }
-   	  $('#otherButton').show();
+   	  $('#theButton').show();
    if (st > lastScrollTop){
 	  $('.collapse').collapse("hide");
 	  $('#myNavbar').removeClass('nav-background');
    } else {
 	  if(st == 0 && $(window).width()>=768){
-	    $('#otherButton').hide();
+	    $('#theButton').hide();
 		$('.collapse').collapse("show");
 	}
    }

@@ -108,16 +108,6 @@ a:hover{
 #loading{
   visibility:hidden;
 }
-#soundcloud_clickable{
-  cursor:pointer;
-}
-#soundcloud_clickable:hover{
-  -webkit-transition: .4s ease-out 0.1s; 
-  -moz-transition: .4s ease-out 0.1s; 
-  -o-transition: .4s ease-out 0.1s;  
-  transition: .4s ease-out 0.1s; 
-  color:RED;
-}
 .trash-bin{
   position:fixed;
   bottom:0px;
