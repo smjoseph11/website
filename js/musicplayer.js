@@ -69,6 +69,10 @@ $(document).ready(function(){
 			$('#pausebutton').css('color', 'grey');
 		}
 	});
+	function playit(){
+		myPlaylist.play(myPlaylist.current);
+	}
+	var lazyPlay = _.debounce(playit,500);
 	$('#playbutton').click(function() {
 		$('#mediaContainer').jPlayer('play');
 
@@ -78,8 +82,10 @@ $(document).ready(function(){
 	});
 	$('#branches').click(function(){
 		$('#musicbar').show();
+		$('#next').show();
+		$('#previous').show();
 		$('.trash-bin').css('bottom','50px');
-		myPlaylist.play(myPlaylist.current);
+		lazyPlay();
 	}); 
 	$('.next').click(function(){	
 		myPlaylist.next();
@@ -93,10 +99,6 @@ $(document).ready(function(){
 		$('#musicbar').hide();	
 		$('.trash-bin').css('bottom','0px');
 		$('#mediaContainer').jPlayer('stop');
-	});
-	$("#branches").click(function(){
-		$('#next').show();
-		$('#previous').show();
 	});
 });
 $('#volumebutton').hover(function(){
