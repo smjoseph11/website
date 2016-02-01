@@ -1,0 +1,24 @@
+{
+  "name": "htdocs",
+  "version": "1.0.0",
+  "description": "website dependencies",
+  "main": "index.js",
+  "dependencies": {
+    "uglify-js": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smjoseph11/website.git"
+  },
+  "author": "Stanlin Joseph <smjoseph11@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smjoseph11/website/issues"
+  },
+  "homepage": "https://github.com/smjoseph11/website#readme",
+  "keywords": []
+}
