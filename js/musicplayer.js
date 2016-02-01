@@ -24,7 +24,6 @@ $(document).ready(function(){
 			}
 		}
 	});
-	var pics = ["img/The Branches.jpg", "img/Nostalghia1.gif"];
 	var myPlaylist = new jPlayerPlaylist({
 		jPlayer: "#mediaContainer",
 		cssSelectorAncestor: ".media-player",
@@ -36,7 +35,7 @@ $(document).ready(function(){
 		title:"The Branches",
 		artist:"Stanlin Joseph",
 		mp3:"media/Branches Version.mp3",
-   	    poster: "img/The Branches.JPG"
+   	    poster: "img/The Branches.jpg"
 
 	},
 	{
