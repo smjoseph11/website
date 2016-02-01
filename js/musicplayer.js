@@ -71,7 +71,7 @@ $(document).ready(function(){
 	function playit(){
 		myPlaylist.play(myPlaylist.current);
 	}
-	var lazyPlay = _.debounce(playit,500);
+	var lazyPlay = _.debounce(playit,1000);
 	$('#playbutton').click(function() {
 		$('#mediaContainer').jPlayer('play');
 
