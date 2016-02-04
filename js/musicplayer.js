@@ -8,6 +8,10 @@ $(document).ready(function(){
 	function moveFW(){
 		$(".move-FW").toggle();
 	}
+	function changePoster(source){
+		$('#branches').attr('src', source);
+	}
+	var LazyChangePoster = _.debounce(changePoster, 500);
 	var moveFWonce = _.once(moveFW, 300);
 
 	$(window).on('resize', function(){
@@ -66,6 +70,14 @@ $(document).ready(function(){
 		pause: function(e){
 			$('#playbutton').css('color', 'white');
 			$('#pausebutton').css('color', 'grey');
+		},
+		next: function(e){
+			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
+			$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);		
+		},
+		previous: function(e){
+			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
+			$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);			
 		}
 	});
 	function playit(){
@@ -81,18 +93,16 @@ $(document).ready(function(){
 	});
 	$('#branches').click(function(){
 		$('#musicbar').show();
-		$('#next').show();
-		$('#previous').show();
+		$('#nxt').show();
+		$('#prev').show();
 		$('.trash-bin').css('bottom','50px');
 		lazyPlay();
 	}); 
-	$('.next').click(function(){	
+	$(document).on('click','.next', function(){	
 		myPlaylist.next();
-		$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
 	});
-	$('.previous').click(function(){
+	$(document).on('click','.previous', function(){	
 		myPlaylist.previous();
-		$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
 	});
 	$("#exit-player").click(function(){
 		$('#musicbar').hide();	
