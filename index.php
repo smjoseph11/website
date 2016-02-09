@@ -126,7 +126,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/add-on/jplayer.playlist.min.js"></script>
     <script src="js/vendor/ugly-vendor.min.js"></script>
     <!--internal js scripts-->
-    <script src="js/ugly-local.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/musicplayer.js"></script>
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
   (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
