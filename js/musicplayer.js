@@ -61,6 +61,10 @@ $(document).ready(function(){
 		solution: "flash, html",
 		supplied: 'mp3',
 		volume: '0.6',
+		ready: function(e){
+			$(this).jPlayer('setMedia', myPlaylist.playlist[0]);
+			$(this).jPlayer('play');
+		},
 		play: function(e) {
 			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
 			$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
@@ -96,7 +100,6 @@ $(document).ready(function(){
 		$('#nxt').show();
 		$('#prev').show();
 		$('.trash-bin').css('bottom','50px');
-		lazyPlay();
 	}); 
 	$(document).on('click','.next', function(){	
 		myPlaylist.next();
