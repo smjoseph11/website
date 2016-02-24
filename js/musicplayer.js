@@ -63,7 +63,9 @@ $(document).ready(function(){
 		volume: '0.6',
 		ready: function(e){
 			$(this).jPlayer('setMedia', myPlaylist.playlist[0]);
-			$(this).jPlayer('play');
+			if($("#branches").complete){
+				$(this).jPlayer('play');
+			}
 		},
 		play: function(e) {
 			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
