@@ -50,10 +50,10 @@ $(document).ready(function(){
 
 	},
 	{
-		title:"Rollercoaster Moon",
+		title:"Moon in My Minivan",
 		artist:"Stanlin Joseph",
-		mp3:"media/Rollercoaster Moon.mp3",
-   	    poster: "img/Rollercoaster.jpg"
+		mp3:"media/Moon In My Minivan.mp3",
+		poster: "img/Moon In My Minivan.gif"
 	}
 	], {
 
@@ -63,9 +63,7 @@ $(document).ready(function(){
 		volume: '0.6',
 		ready: function(e){
 			$(this).jPlayer('setMedia', myPlaylist.playlist[0]);
-			if($("#branches").complete){
-				$(this).jPlayer('play');
-			}
+			$(this).jPlayer('play');
 		},
 		play: function(e) {
 			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
