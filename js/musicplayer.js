@@ -66,7 +66,7 @@ $(document).ready(function(){
 			$(this).jPlayer('play');
 		},
 		play: function(e) {
-			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
+			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title);
 			$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);
 			$('#pausebutton').css('color', 'white');
 			$('#playbutton').css('color', 'grey');
@@ -75,13 +75,8 @@ $(document).ready(function(){
 			$('#playbutton').css('color', 'white');
 			$('#pausebutton').css('color', 'grey');
 		},
-		next: function(e){
-			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
-			$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);		
-		},
-		previous: function(e){
-			$('.music-text').text(myPlaylist.playlist[myPlaylist.current].title)
-			$('#branches').attr('src', myPlaylist.playlist[myPlaylist.current].poster);			
+		loadstart: function(e){
+			$('#branches').attr('src', "img/img-loader.gif");
 		}
 	});
 	function playit(){
@@ -119,6 +114,7 @@ $('#volumebutton').hover(function(){
 $('.volume').hover(function(){},function(){
 	$('#slider-vertical').css({'opacity':'0', 'visibility':'hidden'});
 });
+
 $(function(){
 	$("#slider-vertical").slider({
 		orientation: "vertical",

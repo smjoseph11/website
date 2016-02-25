@@ -124,6 +124,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.min.js"></script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/add-on/jplayer.playlist.min.js"></script>
+    <script src="js/vendor/jquery.isloading.min.js"></script>
     <script src="js/vendor/ugly-vendor.min.js"></script>
     <!--internal js scripts-->
     <script src="js/ugly-local.min.js"></script>
