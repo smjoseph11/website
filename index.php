@@ -18,6 +18,8 @@
       <link rel="stylesheet" href="css/main.css">
       <link rel="stylesheet" href="css/musicplayer.css">
       <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <link rel="stylesheet" href="css/lightbox.css">
+
   </head>
 
   <body>
@@ -28,23 +30,27 @@
     <nav id="myNavbar" class="navbar navbar-fixed-top">
           <button id="theButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse1" aria-expanded="false">
           </button>
-          <button id="otherButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse1" aria-expanded="false" style="display:none">
-          </button>
           <div id="navbarCollapse1" class="collapse">
           <div id="nav" class="row">
            <div class="col-xs-12 col-sm-9 nav-border">
              <div id="menu" class="row" style="font-family: 'Source Code Pro'; font-weight:200;">
                 <a style="color:black;" href="#music">						
-                   <div class="col-sm-3 text-center page"><h3>MUSIC</h3></div>
+                   <div class="col-sm-2 text-center page">MUSIC</div>
                </a>
+              <a style="color:black;" href="#writing">            
+                  <div class="col-sm-2 text-center page">WRITING</div>
+              </a>
+              <a style="color:black;" href="#photography">            
+                  <div class="col-sm-2 text-center page">PHOTOS</div>
+              </a>
                <a style="color:black;" href="#code">						
-                  <div class="col-sm-3 text-center page"><h3>CODE</h3></div>
+                  <div class="col-sm-2 text-center page">CODING</div>
               </a>
               <a style="color:black;" href="#about">						
-                  <div class="col-sm-3 text-center page"><h3>ABOUT</h3></div>
+                  <div class="col-sm-2 text-center page">ABOUT</div>
               </a>
               <a style="color:black;" href="#contact">						
-                  <div class="col-sm-3 text-center page"><h3>CONTACT</h3></div>
+                  <div class="col-sm-2 text-center page">CONTACT</div>
               </a>
             </div><!--row-->
           </div>
@@ -124,7 +130,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.min.js"></script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/add-on/jplayer.playlist.min.js"></script>
-    <script src="js/vendor/jquery.isloading.min.js"></script>
+    <script src="js/vendor/lightbox.js"></script>
+    <script src="js/vendor/jquery.fittext.js"></script>
     <script src="js/vendor/ugly-vendor.min.js"></script>
     <!--internal js scripts-->
     <script src="js/ugly-local.min.js"></script>

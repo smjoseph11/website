@@ -3,6 +3,11 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+img {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
 .navbar-static-top{
   color:#e6e6e6;
 	position: relative;
@@ -41,6 +46,7 @@
   background-color: pink;
 }
 #menu{
+  font-size:100%;
 }
 #pageContent{
   padding-top:50px;
@@ -87,14 +93,13 @@ border-bottom: 3px solid BLACK
 a:hover{
   text-decoration: none;
 }
-.page h3{
- margin:0;
-}
+
 .page{
+  font-size:1.5em;
   padding-top:20px;
   padding-bottom:10px;
 }
-.col-sm-3.text-center.page:hover{
+.text-center.page:hover{
   -webkit-transition: .4s ease-out 0.1s; 
   -moz-transition: .4s ease-out 0.1s; 
   -o-transition: .4s ease-out 0.1s;  
@@ -125,4 +130,10 @@ img.resize{
 body {
   background-color:#e6e6e6;
   padding-bottom: 120px;
+}
+@media only screen and (max-width:1000px){
+  #menu{font-size:90%;}
+}
+@media only screen and (max-width:900px){
+  #menu{font-size:80%;}
 }
